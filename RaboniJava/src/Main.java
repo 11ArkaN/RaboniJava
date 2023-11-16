@@ -34,10 +34,8 @@ public class Main {
     public static double Function1(double a, double b) {
         double M = 0;
         if (a > 0 && b > 0){
-            double part1 = (a * a) / b;
-            double part2 = ((a / b) * a) / b;
-            double part3 = 1 / a;
-            return part1 + part2 + part3;
+            M = ((a * a) / b) + (((a / b) * a) / b) + (1 / a);
+            return M;
         }
         return M;
     }
