@@ -35,7 +35,6 @@ public class Main {
         double M = 0;
         if (a > 0 && b > 0){
             M = ((a * a) / b) + (((a / b) * a) / b) + (1 / a);
-            return M;
         }
         return M;
     }
