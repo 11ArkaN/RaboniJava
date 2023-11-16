@@ -36,6 +36,9 @@ public class Main {
         if (a > 0 && b > 0){
             M = ((a * a) / b) + (((a / b) * a) / b) + (1 / a);
         }
+        else {
+            System.out.println("a lub b jest mniejsze od 0");
+        }
         return M;
     }
 }
