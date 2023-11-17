@@ -1,10 +1,11 @@
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println(Zadanie1(5,2,3));
         Zadanie2(1,-2,1);
         Zadanie3();
+        Zadanie3While();
+        Zadanie3DoWhile();
 
         double[] kroki = {0.5, 0.1, 0.01};
         for (double krok : kroki) {
@@ -86,7 +87,142 @@ public class Main {
             System.out.print("\n");
         }
     }
+    public static void Zadanie3While() {
+        String[][] shapes = new String[4][4];
 
+        int i = 0;
+        while (i < 4) {
+            shapes[0][i] = "";
+            int j = 0;
+            while (j < 4) {
+                shapes[0][i] += "*";
+                j++;
+            }
+            i++;
+        }
+
+        i = 0;
+        while (i < 4) {
+            shapes[1][i] = "";
+            int j = 0;
+            while (j < i + 1) {
+                shapes[1][i] += "*";
+                j++;
+            }
+            i++;
+        }
+
+        i = 0;
+        while (i < 4) {
+            shapes[2][i] = "";
+            int j = 0;
+            while (j < 4 - i) {
+                shapes[2][i] += "*";
+                j++;
+            }
+            i++;
+        }
+
+        i = 0;
+        while (i < 4) {
+            shapes[3][i] = "";
+            int j = 0;
+            while (j < 4 - i) {
+                shapes[3][i] += " ";
+                j++;
+            }
+            j = 0;
+            while (j < i + 1) {
+                shapes[3][i] += "*";
+                j++;
+            }
+            j = 0;
+            while (j < i) {
+                shapes[3][i] += "*";
+                j++;
+            }
+            i++;
+        }
+
+        i = 0;
+        while (i < 4) {
+            int j = 0;
+            while (j < 4) {
+                System.out.print(shapes[j][i] + "  ");
+                j++;
+            }
+            System.out.print("\n");
+            i++;
+        }
+    }
+
+    public static void Zadanie3DoWhile() {
+    String[][] shapes = new String[4][4];
+        int i = 0;
+        do {
+            shapes[0][i] = "";
+            int j = 0;
+            do {
+                shapes[0][i] += "*";
+                j++;
+            } while (j < 4);
+            i++;
+        } while (i < 4);
+
+        i = 0;
+        do {
+            shapes[1][i] = "";
+            int j = 0;
+            do {
+                shapes[1][i] += "*";
+                j++;
+            } while (j < i + 1);
+            i++;
+        } while (i < 4);
+
+        i = 0;
+        do {
+            shapes[2][i] = "";
+            int j = 0;
+            do {
+                shapes[2][i] += "*";
+                j++;
+            } while (j < 4 - i);
+            i++;
+        } while (i < 4);
+
+        i = 0;
+        do {
+            shapes[3][i] = "";
+            int j = 0;
+            do {
+                shapes[3][i] += " ";
+                j++;
+            } while (j < 4 - i);
+            j = 0;
+            do {
+                shapes[3][i] += "*";
+                j++;
+            } while (j < i + 1);
+            j = 0;
+            do {
+                shapes[3][i] += "*";
+                j++;
+            } while (j < i);
+            i++;
+        } while (i < 4);
+
+        i = 0;
+        do {
+            int j = 0;
+            do {
+                System.out.print(shapes[j][i] + "  ");
+                j++;
+            } while (j < 4);
+            System.out.print("\n");
+            i++;
+        } while (i < 4);
+    }
     public static double Zadanie4(double h) {
         double pole = 0;
         double x = -2 + h/2;
