@@ -3,9 +3,9 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(Zadanie1(5,2,3));
         Zadanie2(1,-2,1);
-        Zadanie3();
-        Zadanie3While();
-        Zadanie3DoWhile();
+        Zadanie3(10);
+        Zadanie3While(10);
+        Zadanie3DoWhile(10);
 
         double[] kroki = {0.5, 0.1, 0.01};
         for (double krok : kroki) {
@@ -43,33 +43,36 @@ public class Main {
         }
     }
 
-    public static void Zadanie3() {
-        String[][] shapes = new String[4][4];
+    public static void Zadanie3(int count) {
+        if (count <= 0) return;
+        String[][] shapes = new String[count][count];
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < count; i++) {
             shapes[0][i] = "";
-            for (int j = 0; j < 4; j++) {
+            for (int j = 0; j < count; j++) {
                 shapes[0][i] += "*";
             }
+
         }
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < count; i++) {
             shapes[1][i] = "";
             for (int j = 0; j < i + 1; j++) {
                 shapes[1][i] += "*";
             }
         }
 
-        for (int i = 0; i < 4; i++) {
-            shapes[2][i] = "";
-            for (int j = 0; j < 4 - i; j++) {
+        for (int i = 0; i < count; i++) {
+            String spaces = String.format("%" + count + "s", "");
+            shapes[2][i] = spaces;
+            for (int j = 0; j < count - i; j++) {
                 shapes[2][i] += "*";
             }
         }
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < count; i++) {
             shapes[3][i] = "";
-            for (int j = 0; j < 4 - i; j++) {
+            for (int j = 0; j < count - i; j++) {
                 shapes[3][i] += " ";
             }
             for (int j = 0; j < i + 1; j++) {
@@ -80,21 +83,25 @@ public class Main {
             }
         }
 
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
+        for (int i = 0; i < count; i++) {
+            for (int j = 0; j < count; j++) {
+                if (shapes[j][i] == null) break;
                 System.out.print(shapes[j][i] + "  ");
             }
             System.out.print("\n");
         }
+
+        System.out.print("\n");
     }
-    public static void Zadanie3While() {
-        String[][] shapes = new String[4][4];
+    public static void Zadanie3While(int count) {
+        if (count <= 0) return;
+        String[][] shapes = new String[count][count];
 
         int i = 0;
-        while (i < 4) {
+        while (i < count) {
             shapes[0][i] = "";
             int j = 0;
-            while (j < 4) {
+            while (j < count) {
                 shapes[0][i] += "*";
                 j++;
             }
@@ -102,7 +109,7 @@ public class Main {
         }
 
         i = 0;
-        while (i < 4) {
+        while (i < count) {
             shapes[1][i] = "";
             int j = 0;
             while (j < i + 1) {
@@ -113,10 +120,11 @@ public class Main {
         }
 
         i = 0;
-        while (i < 4) {
-            shapes[2][i] = "";
+        while (i < count) {
+            String spaces = String.format("%" + count + "s", "");
+            shapes[2][i] = spaces;
             int j = 0;
-            while (j < 4 - i) {
+            while (j < count - i) {
                 shapes[2][i] += "*";
                 j++;
             }
@@ -124,10 +132,10 @@ public class Main {
         }
 
         i = 0;
-        while (i < 4) {
+        while (i < count) {
             shapes[3][i] = "";
             int j = 0;
-            while (j < 4 - i) {
+            while (j < count - i) {
                 shapes[3][i] += " ";
                 j++;
             }
@@ -145,9 +153,10 @@ public class Main {
         }
 
         i = 0;
-        while (i < 4) {
+        while (i < count) {
             int j = 0;
-            while (j < 4) {
+            while (j < count) {
+                if (shapes[j][i] == null) break;
                 System.out.print(shapes[j][i] + "  ");
                 j++;
             }
@@ -156,8 +165,9 @@ public class Main {
         }
     }
 
-    public static void Zadanie3DoWhile() {
-    String[][] shapes = new String[4][4];
+    public static void Zadanie3DoWhile(int Count) {
+        if (Count <= 0) return;
+        String[][] shapes = new String[Count][Count];
         int i = 0;
         do {
             shapes[0][i] = "";
@@ -165,9 +175,9 @@ public class Main {
             do {
                 shapes[0][i] += "*";
                 j++;
-            } while (j < 4);
+            } while (j < Count);
             i++;
-        } while (i < 4);
+        } while (i < Count);
 
         i = 0;
         do {
@@ -178,18 +188,19 @@ public class Main {
                 j++;
             } while (j < i + 1);
             i++;
-        } while (i < 4);
+        } while (i < Count);
 
         i = 0;
         do {
-            shapes[2][i] = "";
+            String spaces = String.format("%" + Count + "s", "");
+            shapes[2][i] = spaces;
             int j = 0;
             do {
                 shapes[2][i] += "*";
                 j++;
-            } while (j < 4 - i);
+            } while (j < Count - i);
             i++;
-        } while (i < 4);
+        } while (i < Count);
 
         i = 0;
         do {
@@ -198,7 +209,7 @@ public class Main {
             do {
                 shapes[3][i] += " ";
                 j++;
-            } while (j < 4 - i);
+            } while (j < Count - i);
             j = 0;
             do {
                 shapes[3][i] += "*";
@@ -210,18 +221,19 @@ public class Main {
                 j++;
             } while (j < i);
             i++;
-        } while (i < 4);
+        } while (i < Count);
 
         i = 0;
         do {
             int j = 0;
             do {
+                if (shapes[j][i] == null) break;
                 System.out.print(shapes[j][i] + "  ");
                 j++;
             } while (j < 4);
             System.out.print("\n");
             i++;
-        } while (i < 4);
+        } while (i < Count);
     }
     public static double Zadanie4(double h) {
         double pole = 0;
