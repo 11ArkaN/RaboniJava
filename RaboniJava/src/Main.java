@@ -7,17 +7,13 @@ public class Main {
         Zadanie3While(10);
         Zadanie3DoWhile(10);
 
-        double[] kroki = {0.5, 0.1, 0.01};
-        for (double krok : kroki) {
-            double wynik = Zadanie4(krok);
-            System.out.println("Pole dla kroku " + krok + " wynosi " + wynik);
-        }
-
-        double[] kroki2 = {0.5, 0.1, 0.01};
-        for (double krok : kroki2) {
-            double wynik = Zadanie5(krok);
-            System.out.println("Pole dla kroku " + krok + " wynosi " + wynik);
-        }
+        System.out.println(Zadanie4(0.5)); // wynik: 10.5
+        System.out.println(Zadanie4(0.1)); // wynik: 10.68
+        System.out.println(Zadanie4(0.01)); // wynik: 10.6668
+        System.out.println("\n");
+        System.out.println(Zadanie5(0.5));
+        System.out.println(Zadanie5(0.1));
+        System.out.println(Zadanie5(0.01));
     }
 
     public static double Zadanie1(double a, double b, double c){
@@ -235,27 +231,40 @@ public class Main {
             i++;
         } while (i < Count);
     }
-    public static double Zadanie4(double h) {
-        double pole = 0;
-        double x = -2 + h/2;
-        while (x < 2) {
-            double y = x * x;
-            pole += y * h;
-            x += h;
+    public static double Zadanie4(double krok) {
+        // przedział całkowania to [-2, 2], ponieważ tam y = x^2 przecina y = 4
+        double a = -2; // lewy koniec przedziału
+        double b = 2; // prawy koniec przedziału
+        double pole = 0; // zmienna do przechowywania pola
+        // pętla for, która iteruje po podprzedziałach
+        for (double x = a; x < b; x += krok) {
+            // wysokość prostokąta to różnica między y = 4 a y = x^2
+            double wysokosc = 4 - x * x;
+            // szerokość prostokąta to krok iteracji
+            // pole prostokąta to iloczyn wysokości i szerokości
+            double poleProstokata = wysokosc * krok;
+            // dodajemy pole prostokąta do pola całkowitego
+            pole += poleProstokata;
         }
+        // zwracamy pole całkowite
         return pole;
     }
 
-    public static double Zadanie5(double h) {
-        double pole = 0;
-        double x = h/2;
-        while (x < 2) {
-            double y1 = x * x;
-            double y2 = 2 * x;
-            pole += (y1 + y2) * h;
-            x += h;
+    public static double Zadanie5(double krok) {
+        double a = 0; // lewy koniec przedziału
+        double b = 2; // prawy koniec przedziału
+        double pole = 0; // zmienna do przechowywania pola
+        // pętla for, która iteruje po podprzedziałach
+        for (double x = a; x < b; x += krok) {
+            // wysokość prostokąta to różnica między y = 2x a y = x^2
+            double wysokosc = 2 * x - x * x;
+            // szerokość prostokąta to krok iteracji
+            // pole prostokąta to iloczyn wysokości i szerokości
+            double poleProstokata = wysokosc * krok;
+            // dodajemy pole prostokąta do pola całkowitego
+            pole += poleProstokata;
         }
+        // zwracamy pole całkowite
         return pole;
     }
-
 }
