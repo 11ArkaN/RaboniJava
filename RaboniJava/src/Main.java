@@ -63,9 +63,9 @@ public class Main {
         }
 
         for (int i = 0; i < count; i++) {
-            String spaces = String.format("%" + count + "s", "");
-            shapes[2][i] = spaces;
-            for (int j = 0; j < count - i; j++) {
+            String Spaces = String.format("%" + ((count - i) + (count - i)-1) + "s", "");
+            shapes[2][i] = Spaces;
+            for (int j = 0; j <= i; j++) {
                 shapes[2][i] += "*";
             }
         }
@@ -121,10 +121,10 @@ public class Main {
 
         i = 0;
         while (i < count) {
-            String spaces = String.format("%" + count + "s", "");
-            shapes[2][i] = spaces;
+            String Spaces = String.format("%" + ((count - i) + (count - i)-1) + "s", "");
+            shapes[2][i] = Spaces;
             int j = 0;
-            while (j < count - i) {
+            while (j <=i) {
                 shapes[2][i] += "*";
                 j++;
             }
@@ -192,13 +192,13 @@ public class Main {
 
         i = 0;
         do {
-            String spaces = String.format("%" + Count + "s", "");
-            shapes[2][i] = spaces;
+            String Spaces = String.format("%" + ((Count - i) + (Count - i)-1) + "s", "");
+            shapes[2][i] = Spaces;
             int j = 0;
             do {
                 shapes[2][i] += "*";
                 j++;
-            } while (j < Count - i);
+            } while (j <=i);
             i++;
         } while (i < Count);
 
