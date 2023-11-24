@@ -43,7 +43,6 @@ public class Main {
             }
         }
 
-        // Wyświetlenie co drugiej wartości na ekranie
         for (int i = 0; i < Array.length; i++) {
             System.out.println(Array[i] + ": " + i);
         }
@@ -51,19 +50,16 @@ public class Main {
 
     public static void Zadanie3(){
         int[] Array = new int[10];
-        // Wypełnienie tablicy losowymi wartościami z przedziału <0,100>
         for (int i = 0; i < Array.length; i++) {
             Array[i] = (int) (Math.random() * 101);
         }
 
-        // Invert array
         for (int i = 0; i < Array.length / 2; i++) {
             int temp = Array[i];
             Array[i] = Array[Array.length - i - 1];
             Array[Array.length - i - 1] = temp;
         }
 
-        // Print array
         for (int i = 0; i < Array.length; i++) {
             System.out.println(Array[i] + ": Index:" + i);
         }
