@@ -36,16 +36,20 @@ public class Main {
     public static void Zadanie2(){
         int[] Array = new int[100];
         // Wypełnienie tablicy losowymi wartościami z przedziału <0,1000>
-       for (int i = 0; i < Array.length; i++) {
-            int temp = (int) ((Math.random() * 1000));
-            if (temp % 2 == 0){
-                Array[i] = temp;
-            }
-        }
-
         for (int i = 0; i < Array.length; i++) {
-            System.out.println(Array[i] + ": " + i);
-        }
+            int Wartosc;
+            while (true) {
+                Wartosc = (int) ((Math.random() * 1000));
+                if (Wartosc % 2 == 0) {
+                    break;
+                }
+            } 
+            Array[i] = Wartosc;
+         }
+
+         for (int i = 0; i < Array.length; i++) {
+             System.out.println(Array[i] + ": " + i);
+         }
     }
 
     public static void Zadanie3(){
