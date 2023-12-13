@@ -1,2 +1,2 @@
 # RaboniJava
-Kod siedzi w [link](RaboniJava/src/Main.java)
+Kod siedzi w [link](RaboniJava/src/Program.java)
