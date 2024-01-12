@@ -6,7 +6,7 @@
 |Ćw 5: 10.11.23 | [Link](https://github.com/11ArkaN/RaboniJava/blob/main/RaboniJava/src/Main.java) |
 | Ćw 7: 17.11.23 | [Link](https://github.com/11ArkaN/RaboniJava/tree/17.11.23)                      |
 | Ćw 6: 24.11.23 | [Link](https://github.com/11ArkaN/RaboniJava/tree/24.11.23)                      |
-| Poprawa (C)  | [Link](https://github.com/11ArkaN/RaboniJava/tree/Poprawa_C)                      |
+| Poprawa (C)  | [Link](https://github.com/11ArkaN/RaboniPoprawa)                      |
 | Ćw 8: 01.12.23 (nie zrobione) | [Link](https://github.com/11ArkaN/RaboniJava/tree/1.12.23)                      |
 | Ćw 9: 08.12.23 | [Link](https://github.com/11ArkaN/RaboniJava/tree/8.12.23)                      |
 
